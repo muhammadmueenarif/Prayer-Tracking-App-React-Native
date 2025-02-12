@@ -10,14 +10,14 @@ const HomeScreen = ({ navigation }: any) => {
 
       <TouchableOpacity 
         style={styles.button} 
-        onPress={() => navigation.navigate('TrackPrayer')}
+        onPress={() => navigation.navigate('TrackPrayerScreen')}
       >
         <Text style={styles.buttonText}>Track Prayer</Text>
       </TouchableOpacity>
 
       <TouchableOpacity 
         style={styles.button} 
-        onPress={() => navigation.navigate('DailyRoutine')}
+        onPress={() => navigation.navigate('DailyRoutineScreen')}
       >
         <Text style={styles.buttonText}>Daily Routine</Text>
       </TouchableOpacity>

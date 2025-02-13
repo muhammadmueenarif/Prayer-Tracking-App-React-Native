@@ -6,6 +6,7 @@ import SignUpScreen from './screens/SignUpScreen';
 import HomeScreen from './screens/HomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import TrackPrayerScreen from './screens/TrackPrayerScreen';
+import DailyRoutineScreen from './screens/DailyRoutineScreen';
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,7 @@ const App = () => {
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
         <Stack.Screen name="TrackPrayerScreen" component={TrackPrayerScreen} />
+        <Stack.Screen name="DailyRoutineScreen" component={DailyRoutineScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

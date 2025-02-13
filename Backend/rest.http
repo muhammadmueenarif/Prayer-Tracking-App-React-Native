@@ -1,0 +1,79 @@
+# POST http://localhost:5500/api/auth/signup
+# Content-Type: application/json
+
+{
+  "email": "testuser@example.com",
+  "username": "testuser",
+  "password": "password123"
+}
+
+### Login Request
+POST http://localhost:5500/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "testuser@example.com",
+  "password": "password123"
+}
+
+### Save or Update Daily Routine
+POST http://localhost:5500/api/routine
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJnVTJFRlRxYUdOVmlkdGROeG53elZmbUNKRGcyIiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTczOTAzNDQ0NiwiZXhwIjoxNzM5NjM5MjQ2fQ.zNtyQs-2xCzH3lu0kKbX9yJi2P52uBfmG9SFoF9J5Ao
+
+{
+  "date": "2025-02-08",
+  "text": "No Prayed offer at all from 5 prayers only read Quran."
+}
+
+### fetch daily routine
+GET http://localhost:5500/api/routine/2025-02-08
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJnVTJFRlRxYUdOVmlkdGROeG53elZmbUNKRGcyIiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTczOTAzNDQ0NiwiZXhwIjoxNzM5NjM5MjQ2fQ.zNtyQs-2xCzH3lu0kKbX9yJi2P52uBfmG9SFoF9J5Ao
+
+
+### save or update each prayer status individually
+POST http://localhost:5500/api/prayer
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJnVTJFRlRxYUdOVmlkdGROeG53elZmbUNKRGcyIiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTczOTAzNDQ0NiwiZXhwIjoxNzM5NjM5MjQ2fQ.zNtyQs-2xCzH3lu0kKbX9yJi2P52uBfmG9SFoF9J5Ao
+
+{
+  "date": "2025-02-08",
+  "prayerName": "Fajr",
+  "status": "Not Offered"
+}
+
+###fetch prayers status
+GET http://localhost:5500/api/prayer/2025-02-08
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJnVTJFRlRxYUdOVmlkdGROeG53elZmbUNKRGcyIiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTczOTAzNDQ0NiwiZXhwIjoxNzM5NjM5MjQ2fQ.zNtyQs-2xCzH3lu0kKbX9yJi2P52uBfmG9SFoF9J5Ao
+
+
+### upload image
+POST http://localhost:5500/api/profile/picture
+Content-Type: multipart/form-data
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJnVTJFRlRxYUdOVmlkdGROeG53elZmbUNKRGcyIiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTczOTAzNDQ0NiwiZXhwIjoxNzM5NjM5MjQ2fQ.zNtyQs-2xCzH3lu0kKbX9yJi2P52uBfmG9SFoF9J5Ao
+Content-Disposition: form-data; name="file"; filename="kashan.jpg"
+
+< ./kashan.jpg
+
+
+### fetch user profile picture
+GET http://localhost:5500/api/profile/picture
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJnVTJFRlRxYUdOVmlkdGROeG53elZmbUNKRGcyIiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTczOTAzNDQ0NiwiZXhwIjoxNzM5NjM5MjQ2fQ.zNtyQs-2xCzH3lu0kKbX9yJi2P52uBfmG9SFoF9J5Ao
+
+### update/save bio 
+POST http://localhost:5500/api/profile/bio
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJnVTJFRlRxYUdOVmlkdGROeG53elZmbUNKRGcyIiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTczOTAzNDQ0NiwiZXhwIjoxNzM5NjM5MjQ2fQ.zNtyQs-2xCzH3lu0kKbX9yJi2P52uBfmG9SFoF9J5Ao
+
+{
+  "bio": "I am a web developer passionate about building apps."
+}
+
+
+### get user bio
+GET http://localhost:5500/api/profile/bio
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJnVTJFRlRxYUdOVmlkdGROeG53elZmbUNKRGcyIiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTczOTAzNDQ0NiwiZXhwIjoxNzM5NjM5MjQ2fQ.zNtyQs-2xCzH3lu0kKbX9yJi2P52uBfmG9SFoF9J5Ao
+
+### get username, email, password
+GET http://localhost:5500/api/profile/info
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJnVTJFRlRxYUdOVmlkdGROeG53elZmbUNKRGcyIiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTczOTAzNDQ0NiwiZXhwIjoxNzM5NjM5MjQ2fQ.zNtyQs-2xCzH3lu0kKbX9yJi2P52uBfmG9SFoF9J5Ao
